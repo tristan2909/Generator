@@ -1,0 +1,40 @@
+<button type="button" id="accordion-btn" class="accordion" [ngClass]="{'active': active}" (click)="openCloseAcc()">Options</button>
+<div id="option-container" class="panel" [style.display]="display">
+    <div id="min-max">
+        <div>
+            Min : <input type="number" id="min" placeholder="min" [value]="options.number.min" (input)="options.number.min=+getValue($event)">
+        </div>
+        <div>
+            Max : <input type="number" id="max" placeholder="max" [value]="options.number.max" (input)="options.number.max=+getValue($event)">
+        </div>
+    </div>
+
+    <div id="number">
+        <div>Number : {{options.number.nb}}</div>
+        <div id="number-slider-contaner">
+            <input type="range" id="number-slider" class="slider" (input)="options.number.nb=+getValue($event)" min="1" [max]="options.number.max-options.number.min+1" [value]="options.number.nb" >
+        </div>
+    </div>
+
+    <div id="norepeat">
+        <div>No repeat : </div>
+        <label id="norepeat-switch-container" class="switch-container">
+            <input type="checkbox" (input)="options.number.noRepeats=!options.number.noRepeats" [value]="options.number.noRepeats" [checked]="options.number.noRepeats">
+            <span class="switch round"></span>
+        </label>
+    </div>
+
+    <div id="sort">
+        <div>Sort : </div>
+        <label id="sort-switch-container" class="switch-container">
+            <input type="checkbox" (input)="options.number.sort=!options.number.sort" [value]="options.number.sort" [checked]="options.number.sort">
+            <span class="switch round"></span>
+        </label>
+    </div>
+</div>
+
+<div id="result">
+    {{numbers.length !== 0 ? numbers : "Click 'Generate' button"}}
+</div>
+
+<button type="button" id="generate-btn" (click)="generateNumbers()">GENERATE</button>
