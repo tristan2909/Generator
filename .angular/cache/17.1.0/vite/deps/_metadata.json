@@ -1,0 +1,43 @@
+{
+  "hash": "a215d909",
+  "configHash": "6b4eb2af",
+  "lockfileHash": "a5bed341",
+  "browserHash": "fa341696",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "1bd6bc1f",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "bf468269",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "6a0af8d6",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "9c53bb79",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-GEOAWVWH": {
+      "file": "chunk-GEOAWVWH.js"
+    },
+    "chunk-PHAZNSQE": {
+      "file": "chunk-PHAZNSQE.js"
+    },
+    "chunk-PCKYOCS4": {
+      "file": "chunk-PCKYOCS4.js"
+    }
+  }
+}
