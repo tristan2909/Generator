@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class NumberOptionsService {
-    private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/v1/nuberOptions'
+    private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/v1/number'
 
     constructor(private http: HttpClient) {}
 
