@@ -1,43 +1,52 @@
 {
-  "hash": "a215d909",
-  "configHash": "6b4eb2af",
-  "lockfileHash": "a5bed341",
-  "browserHash": "fa341696",
+  "hash": "1bb68b75",
+  "configHash": "0d138139",
+  "lockfileHash": "9adac369",
+  "browserHash": "1ba5859b",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "9de23ffc",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "0f1f321c",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "1bd6bc1f",
+      "fileHash": "c0cb2ea7",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "bf468269",
+      "fileHash": "d09740a7",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "6a0af8d6",
-      "needsInterop": false
-    },
-    "@angular/common": {
-      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
-      "file": "@angular_common.js",
-      "fileHash": "9c53bb79",
+      "fileHash": "c0330925",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-GEOAWVWH": {
-      "file": "chunk-GEOAWVWH.js"
+    "chunk-KO7OB5BG": {
+      "file": "chunk-KO7OB5BG.js"
     },
-    "chunk-PHAZNSQE": {
-      "file": "chunk-PHAZNSQE.js"
+    "chunk-6NUROYEE": {
+      "file": "chunk-6NUROYEE.js"
     },
-    "chunk-PCKYOCS4": {
-      "file": "chunk-PCKYOCS4.js"
+    "chunk-2JOM4EE6": {
+      "file": "chunk-2JOM4EE6.js"
+    },
+    "chunk-7UBRETAF": {
+      "file": "chunk-7UBRETAF.js"
     }
   }
 }

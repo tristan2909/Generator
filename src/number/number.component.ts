@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { Options } from '../options';
+import { Component, OnInit } from '@angular/core';
+import { NumberOptions } from '../app/numberOptions';
 import { NgClass } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NumberOptionsService } from '../app/numberOptions.service';
 
 @Component({
   selector: 'app-number',
@@ -11,26 +13,45 @@ import { NgClass } from '@angular/common';
   templateUrl: './number.component.html',
   styleUrl: './number.component.scss'
 })
-export class NumberComponent {
+export class NumberComponent implements OnInit {
 
   display: string = "none";
   active: boolean = false;
 
   numbers: number[] = [];
 
-  options: Options = {
-    number: {
-      min: 0,
-      max: 5,
-      nb: 1,
-      noRepeats: true,
-      sort: false
-    }
-  };
-  
+  id!: number;
+  numberOptions!: NumberOptions;
+
+  constructor(private numberOptionsService: NumberOptionsService, private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {
+    this.numberOptions = new NumberOptions();
+
+    this.id = this.route.snapshot.params['id'];
+
+    this.numberOptionsService.getNumberOptions(this.id)
+      .subscribe({next: (data: NumberOptions) => {
+        console.log(data);
+        this.numberOptions = data;
+      }, error: (error: any) => console.log(error)});
+  }
+
+  updateNumberOptions() {
+    this.numberOptionsService.updateNumberOptions(this.id, this.numberOptions)
+      .subscribe({next: (data: any) => {
+        console.log(data);
+        this.numberOptions = new NumberOptions();
+      }, error: (error: any) => console.log(error)});
+  }
+
+  // onSubmit() {
+  //   this.updateNumberOptions();    
+  // }
+
   openCloseAcc() {
     this.active = !this.active;
-    if(this.display === "block") {
+    if (this.display === "block") {
       this.display = "none";
     } else {
       this.display = "block";
@@ -44,27 +65,18 @@ export class NumberComponent {
   generateNumbers() {
     this.numbers = [];
     let nb = 0;
-    for(let i = 0 ; i<this.options.number.nb ; i++){
-      if(this.options.number.noRepeats) {
+    for (let i = 0; i < this.numberOptions.nb; i++) {
+      if (this.numberOptions.noRepeats) {
         do {
-          nb = Math.floor(Math.random() * (this.options.number.max+1)) + this.options.number.min;
-        } while(this.numbers.includes(nb))
+          nb = Math.floor(Math.random() * (this.numberOptions.max + 1)) + this.numberOptions.min;
+        } while (this.numbers.includes(nb))
       } else {
-        nb = Math.floor(Math.random() * this.options.number.max) + this.options.number.min;
+        nb = Math.floor(Math.random() * this.numberOptions.max) + this.numberOptions.min;
       }
       this.numbers.push(nb);
     }
-    if(this.options.number.sort) {
-      this.numbers.sort((a,b): number => {return a-b});
+    if (this.numberOptions.sort) {
+      this.numbers.sort((a, b): number => { return a - b });
     }
   }
-
-  ngOnInit() {
-    
-  }
-
-  
-
-
-
 }

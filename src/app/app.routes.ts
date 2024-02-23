@@ -4,14 +4,14 @@ import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 
 export const routes: Routes = [
   {
-    path: 'number',
-    component: NumberComponent,
-    title: 'Number page'
-  },
-  { 
     path: '',
     redirectTo: '/number',
     pathMatch: 'full'
+  },
+  {
+    path: 'number',
+    component: NumberComponent,
+    title: 'Number page'
   },
   {
     path: 'password',

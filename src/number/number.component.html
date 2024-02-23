@@ -2,24 +2,24 @@
 <div id="option-container" class="panel" [style.display]="display">
     <div id="min-max">
         <div>
-            Min : <input type="number" id="min" placeholder="min" [value]="options.number.min" (input)="options.number.min=+getValue($event)">
+            Min : <input type="number" id="min" placeholder="min" [value]="numberOptions.min" (input)="numberOptions.min=+getValue($event)">
         </div>
         <div>
-            Max : <input type="number" id="max" placeholder="max" [value]="options.number.max" (input)="options.number.max=+getValue($event)">
+            Max : <input type="number" id="max" placeholder="max" [value]="numberOptions.max" (input)="numberOptions.max=+getValue($event)">
         </div>
     </div>
 
     <div id="number">
-        <div>Number : {{options.number.nb}}</div>
+        <div>Number : {{numberOptions.nb}}</div>
         <div id="number-slider-contaner">
-            <input type="range" id="number-slider" class="slider" (input)="options.number.nb=+getValue($event)" min="1" [max]="options.number.max-options.number.min+1" [value]="options.number.nb" >
+            <input type="range" id="number-slider" class="slider" (input)="numberOptions.nb=+getValue($event)" min="1" [max]="numberOptions.max-numberOptions.min+1" [value]="numberOptions.nb" >
         </div>
     </div>
 
     <div id="norepeat">
         <div>No repeat : </div>
         <label id="norepeat-switch-container" class="switch-container">
-            <input type="checkbox" (input)="options.number.noRepeats=!options.number.noRepeats" [value]="options.number.noRepeats" [checked]="options.number.noRepeats">
+            <input type="checkbox" (input)="numberOptions.noRepeats=!numberOptions.noRepeats" [value]="numberOptions.noRepeats" [checked]="numberOptions.noRepeats">
             <span class="switch round"></span>
         </label>
     </div>
@@ -27,7 +27,7 @@
     <div id="sort">
         <div>Sort : </div>
         <label id="sort-switch-container" class="switch-container">
-            <input type="checkbox" (input)="options.number.sort=!options.number.sort" [value]="options.number.sort" [checked]="options.number.sort">
+            <input type="checkbox" (input)="numberOptions.sort=!numberOptions.sort" [value]="numberOptions.sort" [checked]="numberOptions.sort">
             <span class="switch round"></span>
         </label>
     </div>
