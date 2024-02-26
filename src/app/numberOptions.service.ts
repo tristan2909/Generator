@@ -10,15 +10,11 @@ export class NumberOptionsService {
 
     constructor(private http: HttpClient) {}
 
-    getNumberOptions(id: number): Observable<any> {
-        return this.http.get(`${this.baseUrl}/${id}`);
+    getNumberOptions(): Observable<any> {
+        return this.http.get(`${this.baseUrl}`);
     }
 
     updateNumberOptions(id: number, value: any): Observable<Object> {
         return this.http.put(`${this.baseUrl}/${id}`, value);
-    }
-
-    getNumberOptionsList(): Observable<any> {
-        return this.http.get(`${this.baseUrl}`);
     }
 }

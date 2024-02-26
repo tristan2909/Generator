@@ -30,10 +30,10 @@ export class NumberComponent implements OnInit {
 
     this.id = this.route.snapshot.params['id'];
 
-    this.numberOptionsService.getNumberOptions(this.id)
-      .subscribe({next: (data: NumberOptions) => {
-        console.log(data);
-        this.numberOptions = data;
+    this.numberOptionsService.getNumberOptions()
+      .subscribe({next: (data: NumberOptions[]) => {
+        console.log("data : ", data[0]);
+        this.numberOptions = data[0];        
       }, error: (error: any) => console.log(error)});
   }
 
@@ -66,9 +66,9 @@ export class NumberComponent implements OnInit {
     this.numbers = [];
     let nb = 0;
     for (let i = 0; i < this.numberOptions.nb; i++) {
-      if (this.numberOptions.noRepeats) {
+      if (this.numberOptions.noRepeat) {
         do {
-          nb = Math.floor(Math.random() * (this.numberOptions.max + 1)) + this.numberOptions.min;
+          nb = Math.floor(Math.random() * (this.numberOptions.max)) + this.numberOptions.min;
         } while (this.numbers.includes(nb))
       } else {
         nb = Math.floor(Math.random() * this.numberOptions.max) + this.numberOptions.min;
