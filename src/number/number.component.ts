@@ -6,6 +6,9 @@ import { NumberOptionsService } from '../app/numberOptions.service';
 
 @Component({
   selector: 'app-number',
+  host: {
+    class: 'main-content'
+  },
   standalone: true,
   imports: [
     NgClass,
@@ -28,7 +31,7 @@ export class NumberComponent implements OnInit {
   ngOnInit() {
     this.numberOptions = new NumberOptions();
 
-    this.id = this.route.snapshot.params['id'];
+    // this.id = this.route.snapshot.params['id'];
 
     this.numberOptionsService.getNumberOptions()
       .subscribe({next: (data: NumberOptions[]) => {
@@ -38,16 +41,16 @@ export class NumberComponent implements OnInit {
   }
 
   updateNumberOptions() {
-    this.numberOptionsService.updateNumberOptions(this.id, this.numberOptions)
+    this.numberOptionsService.updateNumberOptions(1, this.numberOptions)
       .subscribe({next: (data: any) => {
         console.log(data);
-        this.numberOptions = new NumberOptions();
+        // this.numberOptions = new NumberOptions();
       }, error: (error: any) => console.log(error)});
   }
 
-  // onSubmit() {
-  //   this.updateNumberOptions();    
-  // }
+  save() {
+    this.updateNumberOptions();    
+  }
 
   openCloseAcc() {
     this.active = !this.active;

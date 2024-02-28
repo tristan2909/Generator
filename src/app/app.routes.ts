@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { NumberComponent } from '../number/number.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
+import { PasswordComponent } from './password/password.component';
 
 export const routes: Routes = [
   {
@@ -15,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'password',
-    component: NumberComponent,
+    component: PasswordComponent,
     title: 'Password page'
   },
   {

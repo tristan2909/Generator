@@ -155,6 +155,22 @@ input:checked + .switch:before {
     padding: 0 25px;
 }
 
+#save {
+    display: flex;
+    height: 50px;
+    background-color: rgb(188, 188, 188);
+    align-items: center;
+    justify-content: center;
+}
+
+#saveBtn {
+    border-radius: 5px;
+    background-color: rgb(38, 50, 30);
+    color: white;
+    font-size: x-large;
+    cursor: pointer;
+}
+
 #result {
     min-height: 100px;
     background-color: white;
