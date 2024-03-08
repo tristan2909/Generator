@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -13,13 +13,19 @@ import { NgClass } from '@angular/common';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-  title: string = "Number";
-  activeClass: string = this.title;
+  title!: string;
+  activeClass!: string;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(value => {
+      this.title = this.activeClass = this.router.url.toString().substring(1);
+    })
+  }
 
   changeTab(e: any) {
     this.title = e;
     this.activeClass = this.title;
-    
+
   }
 
 }

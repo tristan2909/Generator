@@ -6,36 +6,36 @@ import { PasswordComponent } from './password/password.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/number',
+    redirectTo: '/Number',
     pathMatch: 'full'
   },
   {
-    path: 'number',
+    path: 'Number',
     component: NumberComponent,
     title: 'Number page'
   },
   {
-    path: 'password',
+    path: 'Password',
     component: PasswordComponent,
     title: 'Password page'
   },
   {
-    path: 'mixer',
+    path: 'Mixer',
     component: NumberComponent,
     title: 'Mixer page'
   },
   {
-    path: 'color',
+    path: 'Color',
     component: NumberComponent,
     title: 'Color page'
   },
   {
-    path: 'constant',
+    path: 'Constant',
     component: NumberComponent,
     title: 'Constant page'
   },
   {
-    path: 'date',
+    path: 'Date',
     component: NumberComponent,
     title: 'Date page'
   },
