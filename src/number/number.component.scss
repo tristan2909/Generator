@@ -55,7 +55,7 @@
     justify-content: space-around;
 }
 
-#number-slider-contaner {
+.slider-contaner {
     width: 100%;
 }
 
@@ -155,7 +155,7 @@ input:checked + .switch:before {
     padding: 0 25px;
 }
 
-#save {
+.save {
     display: flex;
     height: 50px;
     background-color: rgb(188, 188, 188);
@@ -163,7 +163,7 @@ input:checked + .switch:before {
     justify-content: center;
 }
 
-#saveBtn {
+.saveBtn {
     border-radius: 5px;
     background-color: rgb(38, 50, 30);
     color: white;

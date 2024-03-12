@@ -28,7 +28,7 @@ export class NumberComponent implements OnInit {
 
   constructor(private numberOptionsService: NumberOptionsService, private route: ActivatedRoute, private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.numberOptions = new NumberOptions();
 
     // this.id = this.route.snapshot.params['id'];
@@ -54,11 +54,7 @@ export class NumberComponent implements OnInit {
 
   openCloseAcc() {
     this.active = !this.active;
-    if (this.display === "block") {
-      this.display = "none";
-    } else {
-      this.display = "block";
-    }
+    this.display = this.display === "block" ? "none" : "block";
   }
 
   getValue(event: Event): string {

@@ -11,7 +11,7 @@
 
     <div id="number">
         <div>Number : {{numberOptions.nb}}</div>
-        <div id="number-slider-contaner">
+        <div id="number-slider-contaner" class="slider-contaner">
             <input type="range" id="number-slider" class="slider" (input)="numberOptions.nb=+getValue($event)" min="1" [max]="numberOptions.max-numberOptions.min+1" [value]="numberOptions.nb" >
         </div>
     </div>
@@ -32,8 +32,8 @@
         </label>
     </div>
 
-    <div id="save">
-        <button id="saveBtn" (click)="save()">Save</button>
+    <div class="save">
+        <button class="saveBtn" (click)="save()">Save</button>
     </div>
 </div>
 
