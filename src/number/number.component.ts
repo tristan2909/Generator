@@ -41,6 +41,16 @@ export class NumberComponent implements OnInit {
   }
 
   updateNumberOptions() {
+    console.log(this.numberOptions);
+
+    // for (const [key, value] of Object.entries(this.numberOptions)) {
+    //   if(value === true) {
+    //     this.numberOptions[key] = 1;
+    //   } else {
+    //     this.numberOptions[key] = 0;
+    //   }
+    // }
+    
     this.numberOptionsService.updateNumberOptions(1, this.numberOptions)
       .subscribe({next: (data: any) => {
         console.log(data);

@@ -1,5 +1,5 @@
-<button type="button" id="accordion-btn" class="accordion" [ngClass]="{'active': active}" (click)="openCloseAcc()">Options</button>
-<div id="option-container" class="panel" [style.display]="display">
+<button type="button" class="accordion" [ngClass]="{'active': active}" (click)="openCloseAcc()">Options</button>
+<div id="number-option-container" class="panel" [style.display]="display">
     <div id="min-max">
         <div>
             Min : <input type="number" id="min" placeholder="min" [value]="numberOptions.min" (input)="numberOptions.min=+getValue($event)">
@@ -16,9 +16,9 @@
         </div>
     </div>
 
-    <div id="norepeat">
+    <div id="norepeatNumber">
         <div>No repeat : </div>
-        <label id="norepeat-switch-container" class="switch-container">
+        <label class="switch-container">
             <input type="checkbox" (input)="numberOptions.noRepeat=!numberOptions.noRepeat" [value]="numberOptions.noRepeat" [checked]="numberOptions.noRepeat">
             <span class="switch round"></span>
         </label>
