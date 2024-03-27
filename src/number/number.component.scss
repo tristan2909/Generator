@@ -59,19 +59,7 @@
     padding: 0 25px;
 }
 
-#result {
-    min-height: 100px;
-    background-color: white;
-    color: black;
-    padding: 18px;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: xx-large;
-    overflow-wrap: break-word;
-}
-
-#generate-btn {
+#number-generate-btn {
     position: fixed;
     bottom: 0;
     left: 20%;

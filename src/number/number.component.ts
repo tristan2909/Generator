@@ -7,7 +7,9 @@ import { NumberOptionsService } from '../app/numberOptions.service';
 @Component({
   selector: 'app-number',
   host: {
-    class: 'main-content'
+    class: 'main-content',
+    style: 'backgroundColor: rgb(38 50 30)'
+
   },
   standalone: true,
   imports: [
@@ -40,17 +42,7 @@ export class NumberComponent implements OnInit {
       }, error: (error: any) => console.log(error)});
   }
 
-  updateNumberOptions() {
-    console.log(this.numberOptions);
-
-    // for (const [key, value] of Object.entries(this.numberOptions)) {
-    //   if(value === true) {
-    //     this.numberOptions[key] = 1;
-    //   } else {
-    //     this.numberOptions[key] = 0;
-    //   }
-    // }
-    
+  updateNumberOptions() {    
     this.numberOptionsService.updateNumberOptions(1, this.numberOptions)
       .subscribe({next: (data: any) => {
         console.log(data);
@@ -77,7 +69,7 @@ export class NumberComponent implements OnInit {
     for (let i = 0; i < this.numberOptions.nb; i++) {
       if (this.numberOptions.noRepeat) {
         do {
-          nb = Math.floor(Math.random() * (this.numberOptions.max)) + this.numberOptions.min;
+          nb = Math.floor(Math.random() * this.numberOptions.max) + this.numberOptions.min;
         } while (this.numbers.includes(nb))
       } else {
         nb = Math.floor(Math.random() * this.numberOptions.max) + this.numberOptions.min;
